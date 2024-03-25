@@ -143,7 +143,6 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-const hello = 'worlds'
 export default defineComponent({
   name: 'HelloWorld',
   props: {
