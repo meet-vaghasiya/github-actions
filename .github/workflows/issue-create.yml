@@ -5,7 +5,8 @@ on:
 
 jobs:
   label_issue:
-    permissions: write-all
+    permissions:
+      issues: write
     runs-on: ubuntu-latest
     steps:
       - env:
