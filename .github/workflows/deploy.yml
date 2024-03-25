@@ -1,0 +1,26 @@
+name: 'Deploy testing'
+on: [push]
+jobs: 
+  - runs-on: ubantu-latest
+
+  steps: 
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    -name: Installing dependecy
+     run: npm install
+
+    - name: Lingting
+     run: npm run lint
+    - name: Build
+     run: npm run build
+
+    -name: Deploying to dev
+     if: github.ref == 'refs/heads/develop'
+     run: |
+       echo "Deploying to staging environment"
+
+    -name: Deploying to prod
+     if: github.ref == 'refs/heads/main'
+     run: |
+       echo "Deploying to production environment"
