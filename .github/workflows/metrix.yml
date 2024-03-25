@@ -1,5 +1,5 @@
 name: Name testing
-
+on: [push]
 jobs:
   build: 
     runs-on: ubuntu-latest
@@ -8,5 +8,5 @@ jobs:
         node: [14,16]
     steps: 
       - uses: actions/setup-node@v4
-      with: 
-        node-versions: ${{ matrix.node }} 
+        with: 
+          node-versions: ${{ matrix.node }} 
